@@ -1,16 +1,29 @@
-import "./SearchAndFilter.css";
-import { useLanguage } from "../i18n/LanguageContext";
-import type { TodoFilter } from "../services/todoFilterService";
-import type { Todo } from "../services/todoService";
+import "../../styles/SearchAndFilter.css";
+import { useLanguage } from "../../i18n/LanguageContext";
+import type { SearchAndFilterProps, Todo, TodoFilter } from "../../types";
 
-interface SearchAndFilterProps {
-  activeFilter: TodoFilter;
-  displayLimit: number;
-  onFilterChange: (filter: TodoFilter) => void;
-  onDisplayLimitChange: (value: number) => void;
-  onSearchChange: (value: string) => void;
-  searchQuery: string;
-  todos: Todo[];
+export function filterTodos(todos: Todo[], filter: TodoFilter) {
+  if (filter === "completed") {
+    return todos.filter((todo) => todo.completed);
+  }
+
+  if (filter === "in-progress") {
+    return todos.filter((todo) => !todo.completed);
+  }
+
+  return todos;
+}
+
+export function searchTodos(todos: Todo[], query: string) {
+  const normalizedQuery = query.trim().toLowerCase();
+
+  if (!normalizedQuery) {
+    return todos;
+  }
+
+  return todos.filter((todo) =>
+    todo.title.toLowerCase().includes(normalizedQuery)
+  );
 }
 
 function SearchAndFilter({

@@ -1,4 +1,4 @@
-import "./ContactPage.css";
+import "../styles/ContactPage.css";
 import { useLanguage } from "../i18n/LanguageContext";
 
 function ContactPage() {
@@ -7,9 +7,7 @@ function ContactPage() {
   return (
     <section className="contact-page">
       <span className="eyebrow">{t("contact.label")}</span>
-      <h1>{t("contact.title")}</h1>
-      <p className="contact-copy">{t("contact.copy")}</p>
-
+    
       <div className="contact-grid">
         <article className="contact-card">
           <span>{t("contact.nameLabel")}</span>
@@ -29,8 +27,7 @@ function ContactPage() {
         </article>
       </div>
 
-      <div className="contact-note">{t("contact.note")}</div>
-      <div className="contact-note subtle">{t("contact.subtleNote")}</div>
+
     </section>
   );
 }

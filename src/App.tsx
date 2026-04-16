@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./styles/App.css";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import { AppRouterProvider } from "./router";
 

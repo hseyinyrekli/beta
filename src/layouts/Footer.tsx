@@ -1,4 +1,4 @@
-import "./Footer.css";
+import "../styles/Footer.css";
 import { useLanguage } from "../i18n/LanguageContext";
 
 function Footer() {

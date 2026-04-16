@@ -1,11 +1,5 @@
 import axios from "axios";
-
-export interface Todo {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-}
+import type { Todo } from "../types";
 
 export async function getTodos(limit = 100) {
   const endpoint = import.meta.env.VITE_TODOS_ENDPOINT;

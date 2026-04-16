@@ -1,6 +1,7 @@
-import "./Navbar.css";
+import "../styles/Navbar.css";
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { useLanguage } from "../i18n/LanguageContext";
+import type { Language } from "../types";
 import logo from '../assets/jotformlogo.png';
 
 function Navbar() {
@@ -8,7 +9,7 @@ function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleLanguageChange = (nextLanguage: "tr" | "en") => {
+  const handleLanguageChange = (nextLanguage: Language) => {
     const isContactRoute =
       location.pathname.endsWith("/contact") || location.pathname.endsWith("/iletisim");
 

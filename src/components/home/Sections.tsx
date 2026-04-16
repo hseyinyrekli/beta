@@ -1,14 +1,6 @@
-import "./Sections.css";
-import { useLanguage } from "../i18n/LanguageContext";
-import type { Todo } from "../services/todoService";
-
-interface SearchAndFilterProps {
-  errorMessage: string;
-  isLoading: boolean;
-  onRetry: () => void;
-  todos: Todo[];
-  onOpenDetail: (todo: Todo) => void;
-}
+import "../../styles/Sections.css";
+import { useLanguage } from "../../i18n/LanguageContext";
+import type { SectionsProps } from "../../types";
 
 function Sections({
   errorMessage,
@@ -16,7 +8,7 @@ function Sections({
   onRetry,
   todos,
   onOpenDetail,
-}: SearchAndFilterProps) {
+}: SectionsProps) {
   const { t } = useLanguage();
 
   return (

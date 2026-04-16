@@ -1,13 +1,7 @@
 import { useEffect } from "react";
-import "./Modal.css";
-import { useLanguage } from "../i18n/LanguageContext";
-import type { Todo } from "../services/todoService";
-
-interface ModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-    todo: Todo | null;
-}
+import "../../styles/Modal.css";
+import { useLanguage } from "../../i18n/LanguageContext";
+import type { ModalProps } from "../../types";
 
 function Modal({ isOpen, onClose, todo }: ModalProps) {
     const { t } = useLanguage();
@@ -101,7 +95,7 @@ function Modal({ isOpen, onClose, todo }: ModalProps) {
                                 <span className="eyebrow">{t("modal.overview")}</span>
                                 <p>{t("modal.overviewDescription")}</p>
                             </div>
-                         
+
                         </div>
                     </div>
                 </div>

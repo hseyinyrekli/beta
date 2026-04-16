@@ -3,6 +3,7 @@ import react, { reactCompilerPreset } from '@vitejs/plugin-react'
 import babel from '@rolldown/plugin-babel'
 import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { pathToFileURL } from 'node:url'
 
 const envFilePath = resolve(__dirname, 'data.env')
 
@@ -26,8 +27,18 @@ if (existsSync(envFilePath)) {
   })
 }
 
+const routerPluginPackage = '@tanstack/router-plugin/vite'
+const routerPluginFallback = pathToFileURL(
+  resolve(__dirname, '.deps/node_modules/@tanstack/router-plugin/dist/esm/vite.js'),
+).href
+
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(async () => {
+  const { TanStackRouterVite } = await import(routerPluginPackage).catch(() =>
+    import(routerPluginFallback),
+  )
+
+  return {
   resolve: {
     alias: {
       react: resolve(__dirname, 'node_modules/react'),
@@ -41,7 +52,13 @@ export default defineConfig({
     },
   },
   plugins: [
+    TanStackRouterVite({
+      target: 'react',
+      routesDirectory: './src/routes',
+      generatedRouteTree: './src/routeTree.gen.ts',
+    }),
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  }
 })

@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import Modal from "../components/Modal";
-import SearchAndFilter from "../components/SearchAndFilter";
-import Sections from "../components/Sections";
-import { filterTodos, searchTodos, type TodoFilter } from "../services/todoFilterService";
-import { getTodos, type Todo } from "../services/todoService";
+import Modal from "../components/home/Modal";
+import SearchAndFilter, {
+  filterTodos,
+  searchTodos,
+} from "../components/home/SearchAndFilter";
+import Sections from "../components/home/Sections";
+import { getTodos } from "../services/todoService";
+import type { Todo, TodoFilter } from "../types";
 
 function HomePage() {
   const [todos, setTodos] = useState<Todo[]>([]);
