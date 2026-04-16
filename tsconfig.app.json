@@ -6,12 +6,20 @@
     "module": "esnext",
     "types": ["vite/client"],
     "skipLibCheck": true,
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@tanstack/react-router": [
+        ".deps/node_modules/@tanstack/react-router/dist/esm/index.d.ts"
+      ]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
+    "resolveJsonModule": true,
     "noEmit": true,
     "jsx": "react-jsx",
 

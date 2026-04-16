@@ -1,0 +1,128 @@
+{
+  "tr": {
+    "nav": {
+      "home": "Ana Sayfa",
+      "contact": "Iletisim"
+    },
+    "search": {
+      "all": "Tum",
+      "completed": "Tamamlandi",
+      "inProgress": "Devam Ediyor",
+      "searchTitles": "Basliklarda ara",
+      "searchPlaceholder": "Basliktan bir ifade yazin...",
+      "viewRange": "Gorunum araligi"
+    },
+    "sections": {
+      "completed": "Tamamlandi",
+      "inProgress": "Devam Ediyor",
+      "description": "Bu kayit kullanici {userId} icin olusturuldu. Daha fazla baglam ve ilerleme durumu icin detay ekranini acabilirsiniz.",
+      "user": "Kullanici",
+      "detailButton": "Detaya Git",
+      "noMatch": "Eslesme Yok",
+      "noMatchTitle": "Bu filtre ve arama kombinasyonuyla eslesen todo bulunamadi.",
+      "noMatchDescription": "Durum filtresini degistirmeyi ya da arama metninin bir kismini temizlemeyi deneyin."
+    },
+    "states": {
+      "errorLabel": "Hata",
+      "errorTitle": "Todo verileri alinamadi.",
+      "errorDescription": "API tarafinda bir sorun olmus olabilir. Bir kez daha denemek genelde mucize yaratmaz ama burada ise yarayabilir.",
+      "retry": "Tekrar Dene"
+    },
+    "modal": {
+      "todoDetail": "Todo Detayi",
+      "record": "Kayit",
+      "close": "Kapat",
+      "completed": "Tamamlandi",
+      "inProgress": "Devam Ediyor",
+      "description": "Bu todo kaydi kullanici {userId} icin olusturuldu. Modal yapi bilgiyi kompakt tutarken, ana galeriden cikmadan kaydi incelemek icin yeterli baglami da saglar.",
+      "userId": "Kullanici ID",
+      "state": "Durum",
+      "closedLoop": "Kapanmis akis",
+      "openLoop": "Acik akis",
+      "surface": "Yuzey",
+      "liveDataset": "Canli veri seti",
+      "overview": "Ozet",
+      "overviewDescription": "Durum ve kimlik bilgileri burada ayri tutulur; boylece ana metin alani kaydin hikayesine odakli kalir."
+    },
+    "footer": {
+      "label": "Iletisim",
+      "title": "Bu todo paneli hakkinda hizli bir guncelleme mi istiyorsunuz?",
+      "description": "Arama, filtreleme ve detay inceleme akislarini tek bir sade yuzeyde birlestiren case study."
+    },
+    "contact": {
+      "label": "Iletisim",
+      "title": "Case study bitti. Simdi iletisime gecebiliriz.",
+      "copy": "Bu sayfaya kadar geldiyseniz guzel haber: case study gorevini dikkatle izlediniz demektir. Daha da guzel haber: begendiyseniz ise alim surecini uzatmadan benimle rahatlikla iletisime gecebilirsiniz. Kahve benden, iyi haber sizden.",
+      "nameLabel": "Isim",
+      "phoneLabel": "Telefon",
+      "emailLabel": "E-Posta",
+      "locationLabel": "Konum",
+      "location": "Ankara / Turkiye",
+      "note": "Bu projeyi gorup \"tamam, bu kisiyle goruselim\" dediyseniz cok dogru yerdesiniz. Mesaj atin, arayin, mail gonderin. Ben hazirim.",
+      "subtleNote": "Not: Bu satir profesyonel bir sekilde yazilmaya calisildi ama biraz samimi oldu. Bence fena da olmadi."
+    }
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "contact": "Contact"
+    },
+    "search": {
+      "all": "All",
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "searchTitles": "Search titles",
+      "searchPlaceholder": "Type a title fragment...",
+      "viewRange": "View range"
+    },
+    "sections": {
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "description": "Assigned to user {userId}. Open the detail view to inspect the current progress and contextual notes for this record.",
+      "user": "User",
+      "detailButton": "Go Detail",
+      "noMatch": "No Match",
+      "noMatchTitle": "No todo matched this filter and search combination.",
+      "noMatchDescription": "Try switching the status filter or clearing part of your search text."
+    },
+    "states": {
+      "errorLabel": "Error",
+      "errorTitle": "Todo data could not be loaded.",
+      "errorDescription": "The API may be having a moment. Try again, because sometimes the second click is the charming one.",
+      "retry": "Try Again"
+    },
+    "modal": {
+      "todoDetail": "Todo Detail",
+      "record": "Record",
+      "close": "Close",
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "description": "This todo belongs to user {userId}. The modal keeps the information compact, but still gives enough context to inspect the record without leaving the main gallery.",
+      "userId": "User ID",
+      "state": "State",
+      "closedLoop": "Closed loop",
+      "openLoop": "Open loop",
+      "surface": "Surface",
+      "liveDataset": "Live dataset",
+      "overview": "Overview",
+      "overviewDescription": "Status and identity details are separated here so the main text area can stay focused on the record narrative."
+    },
+    "footer": {
+      "label": "Contact",
+      "title": "Need a quick update about this todo dashboard?",
+      "description": "A case study that brings search, filtering, and detail inspection into one clean surface."
+    },
+    "contact": {
+      "label": "Contact",
+      "title": "The case study is done. We can talk now.",
+      "copy": "If you made it this far, that is already a good sign: you reviewed the case study carefully. If you liked what you saw, feel free to reach out without making the hiring process more dramatic than it needs to be. Coffee is on me, good news is on you.",
+      "nameLabel": "Name",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "locationLabel": "Location",
+      "location": "Ankara / Turkey",
+      "note": "If this project made you think \"yes, we should talk to this person,\" you are in exactly the right place. Send a message, make the call, or drop an email. I am ready.",
+      "subtleNote": "Note: This line was written with professional intentions, but it ended up sounding a little friendly. Honestly, not a bad outcome."
+    }
+  }
+}

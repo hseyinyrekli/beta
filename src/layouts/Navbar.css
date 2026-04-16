@@ -1,0 +1,112 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 18px 0 0;
+}
+
+.site-nav {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  min-height: 88px;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 28px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-nav img {
+  width: min(180px, 25vw);
+  object-fit: contain;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-button {
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.language-button:hover,
+.language-active {
+  color: var(--text);
+  border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-link-item {
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.nav-link-item:hover,
+.nav-link-active {
+  color: var(--text);
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 991px) {
+  .site-nav {
+    width: min(100% - 24px, 1180px);
+  }
+}
+
+@media (max-width: 767px) {
+  .site-nav {
+    min-height: 76px;
+    padding: 16px 20px;
+    border-radius: 24px;
+  }
+
+  .site-nav img {
+    width: min(150px, 36vw);
+  }
+
+  .site-nav-links {
+    gap: 8px;
+  }
+
+  .nav-link-item {
+    font-size: 0.78rem;
+    padding: 8px 12px;
+  }
+
+  .language-button {
+    padding: 8px 10px;
+  }
+}

@@ -1,29 +1,94 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import "./Sections.css";
+import { useLanguage } from "../i18n/LanguageContext";
+import type { Todo } from "../services/todoService";
 
-function Sections() {
-  const [todos, setTodos] = useState<any>([]);
+interface SearchAndFilterProps {
+  errorMessage: string;
+  isLoading: boolean;
+  onRetry: () => void;
+  todos: Todo[];
+  onOpenDetail: (todo: Todo) => void;
+}
 
-  useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/todos")
-      .then(res => {
-        setTodos(res.data.slice(0, 4));
-      });
-  }, []);
-
+function Sections({
+  errorMessage,
+  isLoading,
+  onRetry,
+  todos,
+  onOpenDetail,
+}: SearchAndFilterProps) {
+  const { t } = useLanguage();
 
   return (
-    <div className="row p-5 d-flex justify-content-between">
-      {todos.map((todo: any) => (
-        <div className="card col-5 mb-4" key={todo.id}>
-          <div className="card-body">
-            <h5 className="card-title">{todo.id}</h5>
-            <p className="card-text">{todo.title}</p>
-            <a href="#" className="btn btn-outline-dark">{todo.completed ? "True" : "False"}</a>
-          </div>
+    <section className="sections" id="todo-grid">
+      <div id="todo-grid-list" />
+
+      {isLoading && (
+        <div className="todo-grid" aria-busy="true" aria-live="polite">
+          {Array.from({ length: 6 }).map((_, index) => (
+            <article className="todo-card todo-card-skeleton" key={index}>
+              <div className="skeleton-line short" />
+              <div className="skeleton-line title" />
+              <div className="skeleton-line" />
+              <div className="skeleton-line medium" />
+            </article>
+          ))}
         </div>
-      ))}
-    </div>
+      )}
+
+      {!isLoading && errorMessage && (
+        <div className="empty-state error-state" role="alert">
+          <span className="eyebrow">{t("states.errorLabel")}</span>
+          <h3>{t("states.errorTitle")}</h3>
+          <p>{t("states.errorDescription")}</p>
+          <button className="detail-button" onClick={onRetry} type="button">
+            {t("states.retry")}
+          </button>
+        </div>
+      )}
+
+      {!isLoading && !errorMessage && (
+        <>
+          <div className="todo-grid">
+            {todos.map((todo) => (
+              <article className="todo-card" key={todo.id}>
+                <div className="todo-card-top">
+                  <span className="todo-tag">Todo #{todo.id}</span>
+                  <span className={`todo-status ${todo.completed ? "done" : "pending"}`}>
+                    {todo.completed ? t("sections.completed") : t("sections.inProgress")}
+                  </span>
+                </div>
+
+                <h3>{todo.title}</h3>
+                <p>{t("sections.description", { userId: todo.userId })}</p>
+
+                <div className="todo-card-bottom">
+                  <div className="todo-meta">
+                    <span>{t("sections.user")}</span>
+                    <strong>{todo.userId}</strong>
+                  </div>
+                  <button
+                    className="detail-button"
+                    onClick={() => onOpenDetail(todo)}
+                    type="button"
+                  >
+                    {t("sections.detailButton")}
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {todos.length === 0 && (
+            <div className="empty-state">
+              <span className="eyebrow">{t("sections.noMatch")}</span>
+              <h3>{t("sections.noMatchTitle")}</h3>
+              <p>{t("sections.noMatchDescription")}</p>
+            </div>
+          )}
+        </>
+      )}
+    </section>
   );
 }
 

@@ -1,23 +1,14 @@
-
-import './App.css'
-import Navbar from './components/Navbar'
-import SearchAndFilter from './components/SearchAndFilter'
-import Sections from './components/Sections'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { LanguageProvider } from "./i18n/LanguageContext";
+import { AppRouterProvider } from "./router";
 
 function App() {
-
   return (
-    <>
-      <div>
-
-      </div>
-      <Navbar />
-      <SearchAndFilter />
-      <Sections />
-
-    </>
-  )
+    <LanguageProvider>
+      <AppRouterProvider />
+    </LanguageProvider>
+  );
 }
 
-export default App
+export default App;
